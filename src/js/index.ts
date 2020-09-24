@@ -5,17 +5,46 @@ new Vue({
     el: "#app",
     data: {
         name: "",
-        greeting: ""
+        greeting: "",
+        numbers: 0,
+        number1: 0,
+        number2: 0,
+        result: 0,
+        operation: "+"
     },
     methods: {
-        sayHello() {
+        calculate() {
             console.log("Say Hello " + this.name)
-            if (this.name == "") {
-                this.greeting = "Hello NoName"
+
+            switch (this.operation) {
+                case "+": {
+                    this.result = this.number1 + this.number2
+                    break;
+                }
+
+                case "-": {
+                    this.result = this.number1 - this.number2
+                    break;
+                }
+
+                case "*": {
+                    this.result = this.number1 * this.number2
+                    break;
+                }
+
+                case "/": {
+                    this.result = this.number1 / this.number2
+                    break;
+                }
             }
-            else {
-                this.greeting = "Hello " + this.name
-            }
+
+
+
+
+
+
         }
+
+
     }
 })

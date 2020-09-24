@@ -18,9 +18,16 @@
 <body>
   <h1>Hello</h1>
   <div id="app">
-    <input v-model="name" placeholder="Name">
-    <button v-on:click="sayHello()" class="btn btn-primary">Say hello</button>
-    <div>{{ greeting }}</div>
+    <input type="number" v-model.number = "number1">
+    <select v-model="operation" name="operation">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="number" v-model.number ="number2">
+    <button v-on:click="calculate()" class="btn btn-primary">=</button>
+    <div>{{ result }}</div>
   </div>
 
   <script src="bundle.js"></script>
